@@ -1,37 +1,34 @@
-## Welcome to GitHub Pages
+# FlareX
+Sample Usage:
+```java
+public class FlareXSample {
 
-You can use the [editor on GitHub](https://github.com/kartoffelx86/FlareX/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
+    RenderEngine engine;
+    RenderWindow window;
+    RenderQueue queue;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+    public static void main(String[] args) {
+        new FlareXSample;
+    }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    public FlareXSample {
+        Texture tex = null;
+        Texture tex2 = null;
+        window = new RenderWindow(new Dimension(800,600), null, null, true);
+        engine = new RenderEngine(window);
 
-```markdown
-Syntax highlighted code block
+        tex = new Texture(ImageIO.read(new File("C:\\YourImageFile.png")));
+        Rectangle rect = new Rectangle(0,0,500,500);
+        RenderObject obj1 = new RenderObject(tex, rect, 1000);
 
-# Header 1
-## Header 2
-### Header 3
+        tex2 = new Texture(ImageIO.read(new File("C:\\YourImageFile2.png")), true, new Dimension(40,40)); //This is a pattern
+        RenderObject obj2 = new RenderObject(tex2, new Rectangle(20,20,500,500),2000);
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kartoffelx86/FlareX/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+        queue.addObject(obj1);
+        queue.addObject(obj2);
+        engine.render(queue);
+    }
+}
+```	
+	
