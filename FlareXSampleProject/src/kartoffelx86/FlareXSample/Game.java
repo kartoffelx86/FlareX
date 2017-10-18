@@ -37,10 +37,8 @@ public class Game implements GameInterface {
         engine = new RenderEngine(window);
         queue = new RenderQueue();
         lui = new Luigi(10, 10, 60, 60);
-        String dir = System.getProperty("user.dir");
-        System.out.println("current dir = " + dir);
         try {
-            luitexture = new Texture(ImageIO.read(new File("src/kartoffelx86/FlareXSample/Luigi1.png")));
+            luitexture = new Texture(ImageIO.read(this.getClass().getClassLoader().getResource("kartoffelx86/FlareXSample/Luigi1.png")));
         } catch (IOException ex) {
             Logger.getLogger(Game.class.getName()).log(Level.SEVERE, null, ex);
         }
