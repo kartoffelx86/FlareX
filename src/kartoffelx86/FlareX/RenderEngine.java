@@ -27,8 +27,8 @@ public class RenderEngine {
      * @param window
      */
     public RenderEngine(RenderWindow window) {
-        this.window = window;
         window.setEngine(this);
+        this.window = window;
     }
 
     /**
